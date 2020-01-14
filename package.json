@@ -1,6 +1,6 @@
 {
   "name": "koa-params-extractor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extract Koa's Parameters",
   "main": "lib",
   "scripts": {
@@ -12,5 +12,10 @@
   "files": [
     "lib",
     "test"
-  ]
+  ],
+  "homepage": "https://github.com/kdPark0723/koa-params-extractor",
+  "bugs": {
+    "url": "https://github.com/kdPark0723/koa-params-extractor/issues",
+    "email": "kdpark023@gmail.com"
+  }
 }
