@@ -1,0 +1,16 @@
+{
+  "name": "koa-params-extractor",
+  "version": "1.0.0",
+  "description": "Extract Koa's Parameters",
+  "main": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Park Si-Yual",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "test"
+  ]
+}
