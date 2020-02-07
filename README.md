@@ -26,13 +26,50 @@ $ npm i koa-params-extractor
 const paramsExtractor = require('koa-params-extractor');
 
 router.post('/user', async (ctx) => {
-  const request = paramsExtractor.extract(ctx);
+  const { id, username, password } = paramsExtractor.extract(ctx);
     
-  const { id } = request.params;
-  const { username, password } = request.body;
-
   const response = await signUpUser({ id, username, password });
   ctx.body = response;
 });
 ```
 
+    
+
+### Parameters
+
+```js
+function Parameter(
+  where = new Where(null, true, true, true),
+  options = { name: null, combineLevel: 0, as: null }
+) {
+  this.where = where;
+  this.name = options.name;
+  this.combineLevel = options.combineLevel;
+  this.as = options.as;
+}
+
+function Where(name, koaRequest, nodeRequest, context) {
+  this.name = name;
+  this.koaRequest = koaRequest;
+  this.nodeRequest = nodeRequest;
+  this.context = context;
+}
+```
+
+- Parameters defines the information of the parameters to pass.
+  - `where` defines where to find the parameter.
+  - `name` is the name of the parameter.
+    - If `name` exists, the same name is taken from the parameter's location.
+  - `combineLevel` is the level at which the imported arguments are to be combined.
+    - `0` means the imported parameter is the parameter to pass.
+    - `1` means the imported parameter is a child of the parameter to pass.
+  - `as` specifies a name when passing a parameter.
+- Where defines where to find the parameter.
+  - `name` is the name of the location from which to retrieve the parameter.
+  - `koaRequest` means to find the location of a parameter in `ctx.request`.
+  - `nodeRequest` means to find the location of a parameter in `ctx.req`.
+  - `context` means to find the location of a parameter in `ctx`.
+
+- The default value is params, query, header, body, cookies defined.
+
+​    
