@@ -1,4 +1,6 @@
-# Koa Params Extractor ![](https://img.shields.io/npm/dm/koa-params-extractor.png?style=flat-square)
+# Koa Params Extractor
+
+![](https://img.shields.io/npm/dm/koa-params-extractor.png?style=flat-square)
 
 **Extract Koa's request parameters**
 
