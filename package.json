@@ -1,6 +1,6 @@
 {
   "name": "koa-params-extractor",
-  "version": "3.8.4",
+  "version": "3.8.5",
   "description": "Extract Koa's Parameters",
   "main": "lib",
   "scripts": {
