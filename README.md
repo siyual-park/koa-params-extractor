@@ -61,7 +61,7 @@ function Where(name, koaRequest, nodeRequest, context) {
 - Parameters defines the information of the parameters to pass.
   - `where` defines where to find the parameter.
     - If `where` is not an instance of `Where`, the parameter is `where` .
-    - If `where` is not an instance of `Where`, the parameter is found in `ctx` with information from `where`.
+    - If `where` is an instance of `Where`, the parameter is found in `ctx` with information from `where`.
   - `name` is the name of the parameter.
     - If `name` exists, the same name is taken from the parameter's location.
   - `combineLevel` is the level at which the imported arguments are to be combined.
