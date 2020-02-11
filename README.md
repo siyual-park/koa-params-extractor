@@ -42,12 +42,13 @@ router.post('/user', async (ctx) => {
 ```js
 function Parameter(
   where = new Where(null, true, true, true),
-  options = { name: null, combineLevel: 0, as: null }
+  options = { name: null, combineLevel: 0, as: null, index: undefined }
 ) {
   this.where = where;
   this.name = options.name;
   this.combineLevel = options.combineLevel;
   this.as = options.as;
+  this.index = options.index;
 }
 
 function Where(name, koaRequest, nodeRequest, context) {
@@ -68,6 +69,7 @@ function Where(name, koaRequest, nodeRequest, context) {
     - `0` means the imported parameter is the parameter to pass.
     - `1` means the imported parameter is a child of the parameter to pass.
   - `as` specifies a name when passing a parameter.
+  - `index` is index of the parameter to pass.
 - Where defines where to find the parameter.
   - `name` is the name of the location from which to retrieve the parameter.
   - `koaRequest` means to find the location of a parameter in `ctx.request`.
