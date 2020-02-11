@@ -12,7 +12,7 @@ Helps to get parameters (headers, params, query, body) that can be distributed o
 2. find in req location. (ctx.req.xxx)
 3. find in request location. (ctx.request.xxx)
 
-​    
+​        
 
 ## Install
 
@@ -20,7 +20,7 @@ Helps to get parameters (headers, params, query, body) that can be distributed o
 $ npm i koa-params-extractor
 ```
 
-​    
+​        
 
 ## Usage
 
@@ -33,6 +33,14 @@ router.post('/user', async (ctx) => {
   const response = await signUpUser({ id, username, password });
   ctx.body = response;
 });
+```
+
+​    
+
+### Extract
+
+```js
+paramsExtractor.extract(ctx, parameters = [parameter.headers, parameter.params, parameter.query, parameter.body]);
 ```
 
 ​    
